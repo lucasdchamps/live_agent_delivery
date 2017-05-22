@@ -1,35 +1,18 @@
 <script type='text/javascript' src='https://c.la1-c2-par.salesforceliveagent.com/content/g/js/39.0/deployment.js'></script>
 <script type='text/javascript'>
 liveagent.init('https://d.la1-c2-par.salesforceliveagent.com/chat', '5720Y000000XciG', '00D0Y000001Ieev');
-chatStarted = false;
+chatOpened = false;
 
 function startChat() {
   var div = document.getElementById('myiframe');
+  div.style.display = (div.style.display === "none") ? "block" : "none";
 
-  if (div.style.display === 'block') {
-    div.style.display = 'none';
+  if (chatOpened) {
     return;
   }
 
-  div.style.display = 'block';
-
-  // Wait for the iframe to load
-  setTimeout(function() {
-    var client = document.getElementById("liveAgentClientChat");
-    console.log("client: " + client);
-
-    if (client && client.classList[0] == 'liveAgentStateEnded') {
-      liveagent.startChatWithWindow('5730Y000000Xd3y', 'myiframe');
-      chatStarted = true;
-    }
-
-    if (chatStarted) {
-      return;
-    }
-
-    liveagent.startChatWithWindow('5730Y000000Xd3y', 'myiframe');
-    chatStarted = true;
-  }, 1000);
+  liveagent.startChatWithWindow('5730Y000000Xd3y', 'myiframe');
+  chatOpened = true;
 }
 </script>
 
