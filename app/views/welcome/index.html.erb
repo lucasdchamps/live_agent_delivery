@@ -5,8 +5,9 @@ liveagent.init('https://d.la1-c2-par.salesforceliveagent.com/chat', '5720Y000000
 function startChat() {
   var div = document.getElementById('myiframe');
   div.style.display = (div.style.display === "none") ? "block" : "none";
+  var client = document.getElementById('liveAgentClientChat');
 
-  if (liveagent.chasitor && liveagent.chasitor.isChatEstablished() && !liveagent.chasitor.isChatEnded()) {
+  if (client && client.classList[0] != 'liveAgentStateEnded') {
     return;
   }
 
