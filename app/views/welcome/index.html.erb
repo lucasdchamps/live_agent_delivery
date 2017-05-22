@@ -15,7 +15,8 @@ function startChat() {
 
   // Wait for the iframe to load
   setTimeout(function() {
-    var client = document.getElementById('liveAgentClientChat');
+    var client = document.getElementById("liveAgentClientChat");
+    console.log("client: " + client);
 
     if (client && client.classList[0] == 'liveAgentStateEnded') {
       liveagent.startChatWithWindow('5730Y000000Xd3y', 'myiframe');
