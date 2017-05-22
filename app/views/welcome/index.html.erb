@@ -6,7 +6,7 @@ function startChat() {
   var div = document.getElementById('myiframe');
   div.style.display = (div.style.display === "none") ? "block" : "none";
 
-  if (liveagent.chasitor.isChatEstablished() && !liveagent.chasitor.isChatEnded()) {
+  if (liveagent.chasitor && liveagent.chasitor.isChatEstablished() && !liveagent.chasitor.isChatEnded()) {
     return;
   }
 
